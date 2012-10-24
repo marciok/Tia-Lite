@@ -1,0 +1,8 @@
+urls: 
+  login: https://www3.mackenzie.com.br/tia/index.php
+  absences: https://www3.mackenzie.com.br/tia/faltasChamada.php
+  grades: https://www3.mackenzie.com.br/tia/notasChamada.php
+targets:
+  absences: mytable
+  grades:  mytable
+

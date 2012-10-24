@@ -1,0 +1,52 @@
+/* Main css */
+
+h1 {
+  display:none;
+}
+
+.container {
+  margin-top:30px;
+  width:350px;
+  
+}
+
+  #content-area,
+  #login-area {
+    text-align:center;
+    padding:10px 10px 30px 10px;
+    border:2px solid #fff;
+    /* css3 */
+    /* Rounded corner */
+    -webkit-border-radius: 0 15px 15px 10px;
+    -moz-border-radius: 0 15px 15px 10px;
+    border-radius: 0 15px 15px 10px;
+
+    /* Shadows */
+    -webkit-box-shadow:  0px 5px 5px 5px #ccc;
+    box-shadow:  0px 5px 5px 5px #ccc;
+  }
+    .login-form {
+      width:220px;
+      margin:0 auto;
+      text-align:left;
+    }
+
+    .login-form input {
+      text-align:center;
+      font-size:18px;
+    }
+
+    .login-form input[type=submit]{
+      width:220px;
+      margin:0 auto;
+    }
+
+   .logo {
+     margin:10px 0;
+   }
+
+
+   #content-area #grades table:nth-child(2) {
+     display:none;
+   }
+

@@ -1,0 +1,85 @@
+
+/*------------------------------------*\
+	IPHONE
+\*------------------------------------*/
+
+.ui-overlay-c,
+html body {
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:14px;
+    background:url('../images/bg.png') 0 0;
+}
+
+
+h1 {
+    background:url('../images/mack.png');
+    text-indent:-999px;
+    width:100px;
+    height:100px;
+    overflow:hidden;
+    display:block;
+    margin:0 auto 10px;
+}
+
+.save-label {
+    display:inline;
+}
+
+
+.faltas table tr th:first-child,
+.faltas table tr td:first-child,
+
+/*Hidding 'Turmas'*/
+.faltas table tr th:nth-child(3),
+.faltas table tr td:nth-child(3),
+
+/*Hidding 'Aulas previstas'*/
+.faltas table tr th:nth-child(4),
+.faltas table tr td:nth-child(4),
+
+.notas  table:nth-child(2),
+.notas  table tr td:first-child {
+    display:none
+}
+
+.notas table tr:first-child td,
+table tr th {
+    /* background:red; */
+    /* color:#fff; */
+}
+
+.freezed {
+    border:1px solid red;
+}
+
+
+.header {
+	display:none;
+}
+
+/*Login Area*/
+#login-area {
+	width:auto;
+	text-align:center
+}
+
+
+html body #login-area label {
+	diplay:none !important;
+}
+ 
+#login-area input[type='submit'],
+#login-area input {
+	/* width:90%; */
+	/* height:30px; */
+	/* font-size:25px; */
+	/* border:1px solid #fff; */
+}
+
+#login-area input[type='submit'] {
+	/* height:50px; */
+}
+
+
+
+
