@@ -14,7 +14,6 @@ class TiaLite < Sinatra::Application
   post "/fetch-my-tia" do
     content_type :json
 
-    puts settings.urls[:login]
     a = Mechanize.new
     a.get(settings.urls[:login]) do |page|
 
