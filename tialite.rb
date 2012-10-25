@@ -15,6 +15,7 @@ class TiaLite < Sinatra::Application
     content_type :json
 
     a = Mechanize.new
+    a.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     a.get(settings.urls[:login]) do |page|
 
       # Submit the login form
