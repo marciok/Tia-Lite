@@ -1,11 +1,3 @@
-require 'sinatra/base'
-require 'sinatra/config_file'
-require 'mechanize'
-require 'json'
-
-
-
-
 
 class TiaLite < Sinatra::Application
   register Sinatra::ConfigFile
