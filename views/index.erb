@@ -1,3 +1,8 @@
+<section class="alert fixed" style="display:none">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <p></p>
+</section>
+<!-- Login Area -->
 <section id="login-area">
   <img src="/img/mack.gif" class="logo" alt="Mackenzie" />
   <form class="login-form" action="/fetch-my-tia" method="post">
@@ -21,18 +26,29 @@
       <input class="btn btn-danger" type="submit" value="T.I.A"/>
   </form>
 </section>
+
+<!-- Content Section -->
 <section id="content-area" style="display:none">
-  <article>
+  <article class="grades-holder">
     <h2>Notas</h2>
     <section id="grades">
-      
+      <!-- Ajax Grades -->
     </section>
+    <a href="#grades-weight" class="btn btn-info"> Tabela dos pesos </a>
   </article>
-  <article>
+  <article class="absences-holder">
     <h2>Faltas</h2>
     <section id="absences">
-      
+      <!-- Ajax Absences -->
     </section>
   </article>
-  
 </section>
+
+<!-- Loader Section -->
+<section id="loader" style="display:none">
+  <h2>Carregando...</h2>
+  <div class="progress progress-striped active">
+    <div class="bar bar-danger" style="width:100%"></div>
+  </div>
+</section>
+
