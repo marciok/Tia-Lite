@@ -4,3 +4,7 @@ gem 'sinatra-contrib',:require => ['sinatra/base','sinatra/config_file']
 gem 'mechanize'
 gem 'json'
 gem 'certified'
+gem 'newrelic_rpm'
+configure :production do
+  require 'newrelic_rpm'
+end
