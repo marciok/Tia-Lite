@@ -34,7 +34,7 @@ class TiaLite < Sinatra::Application
     end
 
 
-    return {:abcenses => @abs, :grades => @grds}.to_json
+    return {:absences => @abs, :grades => @grds}.to_json
 
   end
 

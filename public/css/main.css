@@ -48,15 +48,33 @@ h1 {
      margin:10px 0;
    }
 
-
-   #content-area #grades {
-     display:none;
-   }
-
-     #content-area #grades table:nth-child(2) {
-       display:none;
-     }
-
   #loader {
     width:300px;
   }
+
+ #content-area #grades {
+   display:none;
+ }
+
+   /* Reseting */
+
+   #content-area #grades table:nth-child(2) {
+     display:none;
+   }
+
+      /*Hidding 'Aulas previstas'*/
+      #content-area #absences table tr th:nth-child(4),
+      #content-area #absences table tr td:nth-child(4),
+
+      #content-area #absences table tr:first-child th:first-child,
+      #content-area #absences table tr td:first-child,
+      #content-area #grades table tr td:first-child {
+          display:none;
+      }
+
+      #content-area #grades table tr:first-child td {
+        display:table-cell;
+      }
+
+
+
