@@ -173,9 +173,8 @@ var TiaLite = {
 
       error : function(){
         $('#login-area').fadeIn();
-        $('.alert p').html("Ocorreu algum erro com o sistema em todo em caso existe a <a href='www.mackenzie.com.br'>maneira tradicional</a>");
+        $('.alert p').html("Ocorreu algum erro com o sistema em todo em caso existe a <a href='http://www.mackenzie.com.br' target='_blank'>maneira tradicional</a>");
         $('.alert').fadeIn();
-        
       }
     })
   }

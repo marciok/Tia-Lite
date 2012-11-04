@@ -10,6 +10,11 @@ class TiaLite < Sinatra::Application
     erb :index
   end
 
+  get "/mock" do
+    content_type :json
+    erb :mock
+  end
+
   # Posting all the infos
   post "/fetch-my-tia" do
     content_type :json
