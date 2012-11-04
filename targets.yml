@@ -2,7 +2,10 @@ urls:
   login: https://www3.mackenzie.com.br/tia/index.php
   absences: https://www3.mackenzie.com.br/tia/faltasChamada.php
   grades: https://www3.mackenzie.com.br/tia/notasChamada.php
+  schedule: https://www3.mackenzie.com.br/tia/horarChamada.php
+  error: https://www3.mackenzie.com.br/tia/logout.php
 targets:
   absences: mytable
   grades:  mytable
+  schedule:  mytable
 

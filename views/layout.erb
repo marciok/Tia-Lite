@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
   <head>
     <title>Tia - Lite</title>
     <!-- Bootstrap -->
@@ -9,10 +8,30 @@
     <link href="/css/main.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Mackenzie</h1>
+      <section class="navbar navbar-inverse navbar-fixed-top" style="display:none">
+        <div class="navbar-inner">
+          <ul class="nav">
+            <li class="active"><a href="#">Faltas</a></li>
+            <li><a href="#">Notas</a></li>
+            <li><a href="#">Horarios</a></li>
+          </ul>
+          <h1><img src="img/mini-logo.gif" alt="Mackenzie" /> Ultima atualização: <span class="refresh-date"></span></h1>
+
+          <ul class="external-actions">
+            <li><a href="#refresh" class="btn btn-danger refresh" data-loading-text="Carregando ...">Atualizar</a></li>
+            <li><a href="#logout" class="btn btn-danger logout">Sair</a></li>
+          </ul>
+        </div>
+    </section>
     <div class="container">
       <%= yield %>
     </div>
+    <!-- Loader Section -->
+    <section id="loader" style="display:none">
+      <h2>Carregando...</h2>
+      <img src="img/loader.gif" alt="" />
+    </section>
+    
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.form.js"></script>

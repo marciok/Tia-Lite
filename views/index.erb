@@ -1,24 +1,27 @@
+
+
 <section class="alert fixed" style="display:none">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <p></p>
 </section>
+
 <!-- Login Area -->
-<section id="login-area">
+<section id="login-area" style="display:none">
   <img src="/img/mack.gif" class="logo" alt="Mackenzie" />
   <form class="login-form" action="/fetch-my-tia" method="post">
       <fieldset>
         <label for="tia">
-          <input type="text" placeholder="Tia" id="tia" name="tia"/>
+          <input type="text" data-placement="left" placeholder="Tia" id="tia" name="tia"/>
         </label>
       </fieldset>
       <fieldset>
         <label for="pass">
-          <input type="password" placeholder="Senha" id="pass" name="pass"/>
+          <input type="password" data-placement="right" placeholder="Senha" id="pass" name="pass"/>
         </label>
       </fieldset>
       <fieldset>
         <label class="checkbox">
-          <input type="checkbox" name="save-infos" value="salvar infos">
+          <input type="checkbox" name="save-infos" class="save-infos" value="salvar infos">
           Salvar Infos.
         </label>
         
@@ -34,7 +37,7 @@
     <section id="grades">
       <!-- Ajax Grades -->
     </section>
-    <a href="#grades-weight" class="btn btn-info"> Tabela dos pesos </a>
+    <a href="#grades-weight" class="btn btn-info grades-weight"> Tabela dos pesos </a>
   </article>
   <article class="absences-holder">
     <h2>Faltas</h2>
@@ -42,13 +45,13 @@
       <!-- Ajax Absences -->
     </section>
   </article>
+  <article class="absences-holder">
+    <h2>Horário</h2>
+    <section id="schedule">
+      <!-- Ajax Absences -->
+    </section>
+  </article>
+  
 </section>
 
-<!-- Loader Section -->
-<section id="loader" style="display:none">
-  <h2>Carregando...</h2>
-  <div class="progress progress-striped active">
-    <div class="bar bar-danger" style="width:100%"></div>
-  </div>
-</section>
 
