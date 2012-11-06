@@ -18,6 +18,10 @@
   margin:0;
 }
 
+.navbar h1 strong {
+  color:#fff;
+}
+
 .external-actions {
   float:right;
 }
@@ -68,14 +72,32 @@
      margin:10px 0;
    }
 
+.alert,
 #loader {
-  background:url('../img/bg.png') 0 0;
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 46%;
   margin-top: -50px;
   margin-left: -100px;
   
+  }
+
+#loader {
+  background:url('../img/bg.png') 0 0;
+  text-align:center;
+}  
+
+  #loader .tia-number {
+    color:#BD362F;
+  }
+
+  #loader .main-loader {
+    margin:5px auto;
+    display:block;
+  }
+
+  #loader .tia-number em {
+    display:block;
   }
 
  #content-area table {

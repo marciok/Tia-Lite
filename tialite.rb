@@ -10,16 +10,11 @@ class TiaLite < Sinatra::Application
     erb :index
   end
 
-  get "/mock" do
-    content_type :json
-    erb :mock
-  end
-
   # Posting all the infos
   post "/fetch-my-tia" do
     content_type :json
     if params[:tia].empty? || params[:pass].empty?
-      return {:message => "Tia e Senha sao obrigatorios"}.to_json
+      return {:message => "Tia e Senha obrigatorios"}.to_json
     end
 
     a = Mechanize.new

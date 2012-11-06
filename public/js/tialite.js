@@ -14,13 +14,14 @@ var TiaLite = {
       $('#grades').html(localStorage.getItem('grades'));
       $('#absences').html(localStorage.getItem('absences'));
       $('#schedule').html(localStorage.getItem('schedule'));
+      $('.refresh-date').html(localStorage.getItem('time'));
 
-      $('.container').css({ width : 900 })
+      $('.container').css({ width : 900 });
 
       $('#content-area').show();
       
-      $('#tia').val(localStorage.getItem('tia'))
-      $('#pass').val(localStorage.getItem('pass'))
+      $('#tia').val(localStorage.getItem('tia'));
+      $('#pass').val(localStorage.getItem('pass'));
 
 
       $('.login-form').submit();
@@ -86,19 +87,23 @@ var TiaLite = {
         }
 
         $('#login-area').fadeOut(function(){
-          $('#loader').fadeIn();
+          $('#loader').fadeIn().children('.tia-number').html($('#tia').val());
         })
 
         if ($('.save-infos').is(':checked')){
-          localStorage.setItem('login',true)
+          localStorage.setItem('tia',$('#tia').val())
+          localStorage.setItem('pass',$('#pass').val())
         }
 
       },
       success : function(data){
+
         if (data.status == "OK") {
+          localStorage.setItem('login',true)
           
           $('.refresh-date').html(data.time)
           $('.refresh').button('reset')
+
           // TODO: make this on server side
           if (data.grades == undefined) {
             $('.alert p').text('Ops não foi possível achar as suas Notas :( ');
@@ -145,18 +150,13 @@ var TiaLite = {
                 $('#grades, #absences, #schedule').children('table').addClass('table table-striped')
                 
 
-                  //LocalStorage Setting
-                if (localStorage.getItem('login')) {
+                //LocalStorage Setting
+                localStorage.setItem('time',data.time)
 
-                  localStorage.setItem('time',data.time)
-                  localStorage.setItem('tia',$('#tia').val())
-                  localStorage.setItem('pass',$('#pass').val())
+                localStorage.setItem('grades',$('#grades').html())
+                localStorage.setItem('absences',$('#absences').html())
+                localStorage.setItem('schedule',$('#schedule').html())
 
-                  localStorage.setItem('grades',$('#grades').html())
-                  localStorage.setItem('absences',$('#absences').html())
-                  localStorage.setItem('schedule',$('#schedule').html())
-
-                }
 
                 
 
@@ -165,15 +165,21 @@ var TiaLite = {
           });
         } else {
           $('#loader').hide();
-          $('#login-area').fadeIn();
+          if (!localStorage.getItem('login')) {
+            $('#login-area').fadeIn();
+          }
           $('.alert p').html(data.status);
           $('.alert').fadeIn();
         }
       },
 
       error : function(){
-        $('#login-area').fadeIn();
-        $('.alert p').html("Ocorreu algum erro com o sistema em todo em caso existe a <a href='http://www.mackenzie.com.br' target='_blank'>maneira tradicional</a>");
+        $('#loader').fadeOut();
+        if (!localStorage.getItem('login')) {
+          $('#login-area').fadeIn();
+        }
+
+        $('.alert p').html("Ocorreu algum erro com o T.I.A em todo em caso existe a <a href='http://www.mackenzie.com.br' target='_blank'>maneira tradicional</a> <strong>:(</strong>");
         $('.alert').fadeIn();
       }
     })
