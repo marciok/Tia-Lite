@@ -5,6 +5,6 @@ gem 'mechanize'
 gem 'json'
 gem 'certified'
 
-# group :production do
-gem 'newrelic_rpm', :require => 'newrelic_rpm'
-# end
+group :production do
+  gem 'newrelic_rpm', :require => 'newrelic_rpm'
+end

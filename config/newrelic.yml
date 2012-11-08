@@ -206,6 +206,8 @@ test:
 production:
   <<: *default_settings
   monitor_mode: true
+  browser_monitoring:
+     auto_instrument: true
 
 # Many applications have a staging environment which behaves
 # identically to production.  Support for that environment is provided
@@ -214,3 +216,5 @@ staging:
   <<: *default_settings
   monitor_mode: true
   app_name: TiaLite
+  browser_monitoring:
+     auto_instrument: true

@@ -104,7 +104,6 @@ var TiaLite = {
           $('.refresh-date').html(data.time)
           $('.refresh').button('reset')
 
-          // TODO: make this on server side
           if (data.grades == undefined) {
             $('.alert p').text('Ops não foi possível achar as suas Notas :( ');
             $('.alert').slideDown();
@@ -117,7 +116,7 @@ var TiaLite = {
           
 
         
-          //Just a draft
+          //Success animation
           $('#loader').fadeOut(function(){
             $('#content-area').fadeIn(function(){
             $('refresh-date').html(data.time);
@@ -131,6 +130,7 @@ var TiaLite = {
 
                 //Removing tables atributes;
                 var notWanted = ['id','width','cellpadding','cellspacing','align','colspan','width','class','bgcolor','height','tabelaemgeral']
+
                 //Absences
                 TiaLite.helpers.clearTableAttrs('#absences table',notWanted);
                 

@@ -36,7 +36,7 @@ class TiaLite < Sinatra::Application
         @grades_p = @tia_main_p.link_with(:href => settings.urls[:grades]).click
         @schedule_p = @tia_main_p.link_with(:href => settings.urls[:schedule]).click
 
-        # Geting all the infos:
+        # Getting all the infos:
         @abs = @absence_p.search(".#{settings.targets[:absences]}")
         @grds = @grades_p.search("##{settings.targets[:grades]}")
         @sch = @schedule_p.search("##{settings.targets[:grades]}")
