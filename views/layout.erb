@@ -2,6 +2,10 @@
 <html lang="pt-BR">
   <head>
     <title>Tia - Lite</title>
+    <!-- Feedback -->
+    <meta name="thefeedbackbutton" content="TiaLite:01f5199f5f58b863904efbecdbe3ed">
+
+
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Main Css -->
@@ -10,14 +14,15 @@
   <body>
       <section class="navbar navbar-inverse navbar-fixed-top" style="display:none">
         <div class="navbar-inner">
-          <ul class="nav">
-            <li class="active"><a href="#absences">Faltas</a></li>
-            <li><a href="#grades">Notas</a></li>
-            <li><a href="#schedule">Horarios</a></li>
-          </ul>
+          <!-- <ul class="nav"> -->
+          <!--   <li class="active"><a href="#absences">Faltas</a></li> -->
+          <!--   <li><a href="#grades">Notas</a></li> -->
+          <!--   <li><a href="#schedule">Horarios</a></li> -->
+          <!-- </ul> -->
           <h1><img src="img/mini-logo.gif" alt="Mackenzie" /> Ultima atualização: <strong class="refresh-date"></strong></h1>
 
           <ul class="external-actions">
+            <li><div class="fb-like" data-href="http://tialite.me" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-action="like" data-font="arial"></div></li>
             <li><a href="#refresh" class="btn btn-danger refresh" data-loading-text="Carregando ...">Atualizar</a></li>
             <li><a href="#logout" class="btn btn-danger logout">Sair</a></li>
           </ul>
@@ -33,9 +38,23 @@
       <img class="main-loader"  src="img/loader.gif" alt="" />
     </section>
     
+
+    <div id="fb-root"></div>
+
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/tialite.js"></script>
+    <!-- Facebook  -->
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=516898721655192";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="http://www.thefeedbackbutton.com/button.js"></script>
   </body>
 </html>

@@ -48,6 +48,91 @@ var TiaLite = {
           _this.removeClass('empty')
         }
       })
+    },
+
+    weekDay : function(){
+      var d = new Date();
+        
+      switch (d.getDay()) {
+        case 0:
+          $('.monday a').click();
+        case 1:
+          $('.tuesday a').click();
+        case 2:
+          $('.wenesday a').click();
+        case 3:
+          $('.thursday a').click();
+        case 4:
+          $('.friday a').click();
+        case 5:
+          $('.saturday a').click();
+        default:
+          $('.monday a').click();
+      }
+    },
+
+    tabsAction : function(el){
+       $(el+' a').click(function(event){
+         event.preventDefault();
+         $(el+' a i').removeClass('icon-minus').addClass('icon-plus');
+         $(this).children().removeClass('icon-plus').addClass('icon-minus');
+         $(el+' ul').hide();
+         $(this).tab('show').parent().children('ul').show();
+       })
+    },
+
+    transSchedule : function(table){
+
+    var time = $(table+' tr:not(:nth-child(1)) td:first-child')
+
+    //Cleaning tables
+     $('.week li ul').html('')
+
+     var removeTrace = function(el){
+       if (el == '--') {
+         return false
+       } else {
+         return el
+       }
+     }
+
+    $.each(time,function(){
+
+        var _this = $(this)
+
+        var monday_class   = _this.next();
+        var tuesday_class  = monday_class.next();
+        var wenesday_class = tuesday_class.next();
+        var thursday_class = wenesday_class.next();
+        var friday_class   = thursday_class.next();
+        var saturday_class = friday_class.next();
+
+
+        if (removeTrace(monday_class.text())) {
+          $('.week li:first-child  ul').append('<li>'+_this.text()+' - '+monday_class.text())
+        }
+
+        if (removeTrace(tuesday_class.text())) {
+          $('.week li:nth-child(2) ul').append('<li>'+_this.text()+' - '+tuesday_class.text())
+        }
+
+        if (removeTrace(wenesday_class.text())) {
+          $('.week li:nth-child(3) ul').append('<li>'+_this.text()+' - '+wenesday_class.text())
+        }
+
+        if (removeTrace(thursday_class.text())) {
+          $('.week li:nth-child(4) ul').append('<li>'+_this.text()+' - '+thursday_class.text())
+        }
+
+        if (removeTrace(friday_class.text())) {
+          $('.week li:nth-child(5) ul').append('<li>'+_this.text()+' - '+friday_class.text())
+        }
+
+        if (removeTrace(saturday_class.text())) {
+          $('.week li:nth-child(6) ul').append('<li>'+_this.text()+' - '+saturday_class.text())
+        }
+        
+      });
     }
 
   },
@@ -56,8 +141,19 @@ var TiaLite = {
   gradesWeight : function(bt){
     $(bt).click(function(e){
       e.preventDefault();
+
+      var icon = $(this).children('i')
+
+      if ( icon.hasClass('icon-plus') ){
+        icon.removeClass('icon-plus').addClass('icon-minus')
+      }    
+      else {
+        icon.removeClass('icon-minus').addClass('icon-plus')
+      }
+      
       $('#grades table:nth-child(2)').slideToggle();
-    })
+    });
+
   },
 
   refreshBt : function(bt){
@@ -126,7 +222,15 @@ var TiaLite = {
               },function(){
                 $('#grades').html(data.grades);
                 $('#absences').html(data.absences);
-                $('#schedule').html(data.schedule);
+
+                $('.schedule-holder .temp').html(data.schedule);
+                TiaLite.helpers.weekDay();
+
+                TiaLite.helpers.transSchedule('.schedule-holder .temp');
+                $('.week').addClass('nav nav-pills nav-stacked')
+                TiaLite.helpers.tabsAction('.week li');
+                $('.temp').remove()
+                
 
                 //Removing tables atributes;
                 var notWanted = ['id','width','cellpadding','cellspacing','align','colspan','width','class','bgcolor','height','tabelaemgeral']
@@ -139,16 +243,8 @@ var TiaLite = {
 
                 //Schedule
                 TiaLite.helpers.clearTableAttrs('#schedule table',notWanted);
+                $('#grades table, #absences table').addClass('table table-striped')
 
-                $('#schedule table').prepend('<tr class="period"><th colspan="7">');
-
-                $('#schedule table:first .period th').text('Manhã');
-                $('#schedule table:nth-child(2) .period th').text('Tarde');
-                $('#schedule table:nth-child(3) .period th').text('Noite');
-
-                $('#grades, #absences, #schedule').slideDown('slow');
-                $('#grades, #absences, #schedule').children('table').addClass('table table-striped')
-                
 
                 //LocalStorage Setting
                 localStorage.setItem('time',data.time)

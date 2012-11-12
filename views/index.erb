@@ -11,12 +11,12 @@
   <form class="login-form" action="/fetch-my-tia" method="post">
       <fieldset>
         <label for="tia">
-          <input type="text" data-placement="left" placeholder="Tia" id="tia" name="tia"/>
+          <input type="text" data-placement="left" placeholder="Tia" maxlength="20" id="tia" name="tia"/>
         </label>
       </fieldset>
       <fieldset>
         <label for="pass">
-          <input type="password" data-placement="right" placeholder="Senha" id="pass" name="pass"/>
+          <input type="password" data-placement="right" placeholder="Senha" maxlength="20" id="pass" name="pass"/>
         </label>
       </fieldset>
       <fieldset>
@@ -37,7 +37,7 @@
     <section id="grades">
       <!-- Ajax Grades -->
     </section>
-    <a href="#grades-weight" class="btn btn-info grades-weight"> Tabela dos pesos </a>
+    <a href="#grades-weight" class="btn btn-danger grades-weight"><i class="icon-plus"></i> Tabela dos pesos </a>
   </article>
   <article class="absences-holder">
     <h2>Faltas</h2>
@@ -45,11 +45,50 @@
       <!-- Ajax Absences -->
     </section>
   </article>
-  <article class="absences-holder">
+  
+  <article class="schedule-holder">
     <h2>Horário</h2>
     <section id="schedule">
-      <!-- Ajax Absences -->
+      <ul class="week nav nav-tabs nav-stacked">
+        <li class="monday">
+        <a href="#monday"><i class="icon-plus"></i>Segunda</a>
+          <ul>
+
+          </ul>
+        </li>
+        <li class="tuesday">
+        <a href="#tuesday"><i class="icon-plus"></i>Terça</a>
+          <ul>
+            
+          </ul>
+        </li>
+        <li class="wenesday">
+          <a href="#wenesday"><i class="icon-plus"></i>Quarta</a>
+          <ul>
+            
+          </ul>
+        </li>
+        <li class="thursday">
+          <a href="#thursday"><i class="icon-plus"></i>Quinta</a>
+          <ul>
+            
+          </ul>
+        </li>
+        <li class="friday">
+         <a href="#friday"><i class="icon-plus"></i>Sexta</a>
+          <ul>
+            
+          </ul>
+        </li>
+        <li class="saturday">
+        <a href="#saturday"><i class="icon-plus"></i>Sábado</a>
+          <ul>
+            
+          </ul>
+        </li>
+      </ul>
     </section>
+    <div class="temp"></div>
   </article>
   
 </section>

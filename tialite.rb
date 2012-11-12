@@ -47,7 +47,7 @@ class TiaLite < Sinatra::Application
     end  
     t = DateTime.now
 
-    return {:status => "OK",:absences => @abs, :grades => @grds, :schedule => @sch, :time => t.strftime('%a, %d %b %Y %H:%M:%S')}.to_json
+    return {:status => "OK",:absences => @abs, :grades => @grds, :schedule => @sch, :time => t.strftime('%d %b %Y as %H:%M:%S')}.to_json
 
   end
 

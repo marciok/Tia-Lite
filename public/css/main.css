@@ -7,6 +7,26 @@
   
 }
 
+#content-area h2 {
+  background:#BD362F;
+  color:#fff;
+  /* css3 */
+  /* Rounded corner */
+  -webkit-border-radius: 0 15px 15px 10px;
+  -moz-border-radius: 0 15px 15px 10px;
+  border-radius: 0 15px 15px 10px;
+
+  
+}
+
+#content-area .grades-holder,
+#content-area .absences-holder,
+#content-area .schedule-holder {
+  border-bottom:2px solid #fff;
+  margin-bottom:20px;
+  padding-bottom:20px;
+}
+
 
 .navbar .mini-logo {
   float:left;
@@ -25,6 +45,11 @@
 .external-actions {
   float:right;
 }
+
+.external-actions .fb-like {
+  margin-top:10px;
+} 
+
 
   .external-actions li {
     list-style:none;
@@ -48,6 +73,7 @@
     -webkit-box-shadow:  0px 5px 5px 5px #ccc;
     box-shadow:  0px 5px 5px 5px #ccc;
   }
+
 
   .empty {
     border:1px solid red !important;
@@ -75,8 +101,8 @@
 .alert,
 #loader {
   position: fixed;
-  top: 50%;
-  left: 46%;
+  top: 30%;
+  left: 50%;
   margin-top: -50px;
   margin-left: -100px;
   width:350px;
@@ -105,6 +131,41 @@
    width:100%;
  }
 
+
+ .absences-holder table td {
+   text-align:center;
+ }
+
+
+ .schedule-holder .week{
+   text-align:left;
+ }
+
+
+ .schedule-holder .week li ul {
+   display:none
+ }
+
+ .schedule-holder .week li ul li:nth-child(even) {
+    border-bottom:2px solid #BD362F;
+    margin-bottom:5px;
+ } 
+
+ .schedule-holder .week .active a {
+   background:#BD362F;
+   color:#fff;
+   font-weight:bold;
+
+  /* css3 */
+  /* Rounded corner */
+  -webkit-border-radius: 0 15px 15px 10px;
+  -moz-border-radius: 0 15px 15px 10px;
+  border-radius: 0 15px 15px 10px;
+   
+ }
+ .schedule-holder .week a {
+   color:#BD362F;
+ }
    /* Reseting */
 
    #content-area #grades table:nth-child(2) {
