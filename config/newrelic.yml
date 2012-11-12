@@ -216,5 +216,3 @@ staging:
   <<: *default_settings
   monitor_mode: true
   app_name: TiaLite
-  browser_monitoring:
-     auto_instrument: true
