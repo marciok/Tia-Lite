@@ -18,7 +18,7 @@ class TiaLite < Sinatra::Application
   end
 
   get "/channel" do
-    erb :channel
+     "<script src='//connect.facebook.net/en_US/all.js'></script>"
   end
   
 
