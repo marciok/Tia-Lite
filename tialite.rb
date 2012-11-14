@@ -12,6 +12,11 @@ class TiaLite < Sinatra::Application
     erb :index
   end
 
+  post "/" do
+    erb :index
+  end
+  
+
   # Posting all the infos
   post "/fetch-my-tia" do
     content_type :json
