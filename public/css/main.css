@@ -35,7 +35,7 @@
 .navbar h1 {
   float:left;
   font-size:14px;
-  margin:0;
+  margin-bottom:0;
 }
 
 .navbar h1 strong {
@@ -47,7 +47,7 @@
 }
 
 .external-actions .fb-like {
-  margin-top:10px;
+  margin:10px 208px 0 0;
 } 
 
 
@@ -102,7 +102,7 @@
 #loader {
   position: fixed;
   top: 30%;
-  left: 50%;
+  left: 46%;
   margin-top: -50px;
   margin-left: -100px;
   width:350px;
@@ -166,6 +166,26 @@
  .schedule-holder .week a {
    color:#BD362F;
  }
+
+  .to-apps {
+    overflow:hidden;
+    margin-left:66px;
+  }
+
+    .to-apps li {
+      list-style:none;
+      float:left;
+    }
+
+  .navbar-inner .to-apps {
+    float:left;
+    margin:10px 126px 0 10px;
+  }
+
+  .navbar-inner .to-apps li {
+    margin-right:20px;
+  }
+
    /* Reseting */
 
    #content-area #grades table:nth-child(2) {

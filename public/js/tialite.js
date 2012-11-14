@@ -81,7 +81,7 @@ var TiaLite = {
        })
     },
 
-    transSchedule : function(table){
+  transSchedule : function(table){
 
     var time = $(table+' tr:not(:nth-child(1)) td:first-child')
 
