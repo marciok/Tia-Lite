@@ -12,8 +12,13 @@ class TiaLite < Sinatra::Application
     erb :index
   end
 
+  #Facebook Issues
   post "/" do
     erb :index
+  end
+
+  get "/channel" do
+    erb :channel
   end
   
 
