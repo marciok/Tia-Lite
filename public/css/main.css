@@ -44,10 +44,17 @@
 
 .external-actions {
   float:right;
+  padding-top:10px;
 }
 
+.external-actions .twitter-share {
+  margin-top:10px;
+}
+.external-actions .facebook-share {
+  width:134px;
+}
 .external-actions .fb-like {
-  margin:10px 208px 0 0;
+  margin:10px 0 0 0;
 } 
 
 
@@ -179,7 +186,7 @@
 
   .navbar-inner .to-apps {
     float:left;
-    margin:10px 126px 0 10px;
+    margin:10px 0 0 10px;
   }
 
   .navbar-inner .to-apps li {
